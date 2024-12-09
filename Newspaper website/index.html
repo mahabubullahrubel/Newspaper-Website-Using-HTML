@@ -1,75 +1,372 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest News</title>
+    <title>Searching for Truth! - News Portal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #e53e3e;
+            --text-color: #2d3748;
+            --light-gray: #f7fafc;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+
+        .top-bar {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 0;
         }
 
-        nav {
-            background-color: #333;
-            padding: 1em;
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            padding: 15px 0;
         }
 
-        nav a {
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 1rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-link.active {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .breaking-news {
+            background: var(--light-gray);
+            padding: 10px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .breaking-news-label {
+            background: var(--accent-color);
             color: white;
-            text-decoration: none;
-            padding: 0.5em 1em;
-            margin: 0 0.5em;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-weight: bold;
         }
 
-        nav a:hover {
-            background-color: #555;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .news-item {
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
             margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
         }
 
-        h1 {
-            color: #333;
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-category {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .news-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 10px 0;
+            color: var(--primary-color);
+        }
+
+        .news-excerpt {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .featured-news {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .featured-image {
+                height: 300px;
+            }
         }
     </style>
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Latest</a>
-        <a href="bangladesh.html">Bangladesh</a>
-        <a href="international.html">International</a>
-        <a href="sports.html">Sports</a>
-        <a href="entertainment.html">Entertainment</a>
-        <a href="business.html">Business</a>
-        <a href="opinion.html">Opinion</a>
-    </nav>
-    <div class="content">
-        <h1>Latest News</h1>
-        <div class="news-item">
-            <h2>Breaking News: Major Development in Technology Sector</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            <small>Published: December 9, 2024</small>
-        </div>
-        <div class="news-item">
-            <h2>Global Climate Conference Concludes</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.</p>
-            <small>Published: December 9, 2024</small>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span>Monday, December 09, 2024</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span>Follow us: <a href="https://www.facebook.com">Facebook</a>
+ | <a href="https://www.Twitter.com">Twitter</a> | <a href="https://www.Instagram.com">Instagram</a></span>
+                </div>
+            </div>
         </div>
     </div>
-</body>
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Searching for Truth!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#latest">Latest</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bangladesh">Bangladesh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#international">International</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sports">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#entertainment">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#business">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#opinion">Opinion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breaking News -->
+    <div class="breaking-news">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <span class="breaking-news-label me-3">Breaking</span>
+                <marquee behavior="scroll" direction="left">
+                    Major economic reforms announced | New breakthrough in renewable energy | National team wins international tournament
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Featured News -->
+        <div class="featured-news">
+            <img src="/api/placeholder/1200/400" alt="Featured News" class="featured-image">
+            <div class="featured-content">
+                <div class="news-category">Featured</div>
+                <h2 class="news-title text-white">Groundbreaking Discovery in Climate Science</h2>
+                <p class="news-excerpt text-white">Scientists announce major breakthrough in understanding climate patterns...</p>
+            </div>
+        </div>
+
+        <!-- Latest News Section -->
+        <h2 class="section-title">Latest News</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="news-card">
+                    <img src="/api/placeholder/400/200" alt="News" class="news-image">
+                    <div class="p-3">
+                        <div class="news-category">Bangladesh</div>
+                        <h3 class="news-title">Economic Growth Surpasses Expectations</h3>
+                        <p class="news-excerpt">Latest economic indicators show promising growth in multiple sectors...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-card">
+                    <img src="/api/placeholder/400/200" alt="News" class="news-image">
+                    <div class="p-3">
+                        <div class="news-category">International</div>
+                        <h3 class="news-title">Global Summit Addresses Climate Change</h3>
+                        <p class="news-excerpt">World leaders gather to discuss urgent climate action measures...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-card">
+                    <img src="/api/placeholder/400/200" alt="News" class="news-image">
+                    <div class="p-3">
+                        <div class="news-category">Sports</div>
+                        <h3 class="news-title">National Team Advances to Finals</h3>
+                        <p class="news-excerpt">Historic victory secures place in championship finals...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="section-title">Current News</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="news-card">
+                    <img src="/api/placeholder/400/200" alt="News" class="news-image">
+                    <div class="p-3">
+                        <div class="news-category">Bangladesh</div>
+                        <h3 class="news-title">Economic Growth Surpasses Expectations</h3>
+                        <p class="news-excerpt">Latest economic indicators show promising growth in multiple sectors...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-card">
+                    <img src="/api/placeholder/400/200" alt="News" class="news-image">
+                    <div class="p-3">
+                        <div class="news-category">World</div>
+                        <h3 class="news-title">Global Markets React to New Trade Policies</h3>
+                        <p class="news-excerpt">New trade policies have caused significant shifts in global markets...</p>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="news-card">
+                    <img src="/api/placeholder/400/200" alt="News" class="news-image">
+                    <div class="p-3">
+                        <div class="news-category">Technology</div>
+                        <h3 class="news-title">Tech Companies Innovate with AI</h3>
+                        <p class="news-excerpt">Leading tech companies are pushing the boundaries with AI innovations...</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- More sections can be added similarly -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="footer-title">About Us</h3>
+                    <p>Searching for Truth is dedicated to bringing you accurate, unbiased news from around the world.</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#" class="footer-link">Latest News</a>
+                    <a href="#" class="footer-link">Popular Stories</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="footer-title">Categories</h3>
+                    <a href="#" class="footer-link">Bangladesh</a>
+                    <a href="#" class="footer-link">International</a>
+                    <a href="#" class="footer-link">Sports</a>
+                    <a href="#" class="footer-link">Business</a>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="footer-title">Connect With Us</h3>
+                    <a href="www.facebook.com" class="footer-link">Facebook</a>
+                    <a href="www.Twitter.com" class="footer-link">Twitter</a>
+                    <a href="www.Instagram.com" class="footer-link">Instagram</a>
+                    <a href="www.LinkedIn.com" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            gsap.from('.news-card', { duration: 1, y: 100, opacity: 0, stagger: 0.3 });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
 </html>
